@@ -7,18 +7,18 @@ import pickle
 
 
 ## Loading the trained model
-model = tf.keras.models.load_model("ANN_Classification_project/model.h5")
+model = tf.keras.models.load_model("model.h5")
 
 
 ## Load the encoders and scalers
 
-with open('ANN_Classification_project/label_encoder_gender.pkl' , 'rb') as file:
+with open('label_encoder_gender.pkl' , 'rb') as file:
     Gender = pickle.load(file) 
 
-with open('ANN_Classification_project/onehot_encoder_geo.pkl' , 'rb') as file:
+with open('onehot_encoder_geo.pkl' , 'rb') as file:
     Geography = pickle.load(file)
 
-with open('ANN_Classification_project/scaler.pkl' , 'rb') as file:
+with open('scaler.pkl' , 'rb') as file:
     scaler = pickle.load(file)
 
 
@@ -71,3 +71,4 @@ if prediction_proba > 0.5:
     st.write('The customer is likely to churn.')
 else:
     st.write('The customer is not likely to churn.')
+
